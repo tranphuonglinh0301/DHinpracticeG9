@@ -1,0 +1,52 @@
+---
+title: "Untitled"
+author: "Tran Phuong Linh"
+date: "2024-12-21"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(dplyr)
+library(ggplot2)
+```
+
+```{r}
+data <- read.csv("cleaned_dataset.csv")
+```
+
+```{r}
+#convert counts to numeric columns
+convert_to_number <- function(value) {
+  as.numeric(gsub('\"', '', value))
+}
+data$likes_count <- sapply(data$likes_count, convert_to_number)
+data$played_count <- sapply(data$played_count, convert_to_number)
+data$quotes_count <- sapply(data$quotes_count, convert_to_number)
+data$retweets_count <- sapply(data$retweets_count, convert_to_number)
+data$replies_count<- sapply(data$replies_count, convert_to_number)
+data <- data %>%
+  mutate(engagement = likes_count + played_count + quotes_count + retweets_count +
+                          replies_count)
+```
+
+```{r}
+data_plot <- data %>%
+  group_by(language) %>%
+  summarize(engagement_mean = mean(engagement))
+
+ggplot(data_plot, aes(x = language, y = engagement_mean)) + 
+  geom_col(aes(fill = language)) + labs(x = "Language", 
+                                         y = "Average engagement",
+                                         title = "The difference in engagement by languages") + 
+  theme_minimal() + theme(legend.position = "none") +
+  scale_x_discrete(labels = c("English", "French", "Italian"))
+```
+
+
+
+
+
