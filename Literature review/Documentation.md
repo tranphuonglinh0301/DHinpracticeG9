@@ -24,6 +24,23 @@
     * Creating and distribution of accurate information
     * Increased frequency of corrections
     * Taking advantage of technology (tools can communicate health advice in real time)
+ 
+## Examination of Gender Stereotypes and Norms in Health-Related Content Posted to Snapchat Discover Channels: Qualitative Content Analysis (LeBeau et al., 2019)
+Snapchat has seen one of the most rapid, and unprecedented, growths in the history of social networking sites and social media with 3 billion Snapchats sent daily. In 2015, Snapchat introduced a new feature, Snapchat Discover, providing a unique way for publishers, such as magazines, to connect their content to Snapchat users.
+This study aimed to evaluate qualitatively the health-related content distributed among male-focused and female-focused Discover channels and to determine whether differences exist between the content posted to these channels.
+Magazine Discover channels with male and female target audiences were identified based on the magazine’s claimed audience and a search of Snapchat Discover’s magazine publishers, resulting in the selection of two male-focused and two female-focused channels. Stories were collected daily from each of the selected channels during a 4-week period. Using the constant comparative method, 406 Discover stories were collected and analyzed.
+=> Differences in health content coverage existed between male- and female-focused channels. General health stories from male channels comprised 7.5% (10/134) of total stories compared with 22.8% (62/272) for female channels. Sexual health stories from male channels comprised 3.0% (4/134) of total stories compared with 18.8% (51/272) for female channels. Moreover, female-focused channels’ content was more comprehensive. Female audiences were portrayed as being health information seekers, concerned with sexual health and male satisfaction, primarily responsible for contraception and pregnancy prevention, and less informed about sex. Male audiences were portrayed as being less likely to seek health information, obsessed with and driven by sex, and less concerned with sexual health.
+### Note
+- In seeking for articles that relate gender stereotypes with health information, majority of research focuses on investigating how gender stereotype affects the intention and behavior of seeking health information in male and female individuals.
+## https://www.tandfonline.com/doi/abs/10.1080/17512786.2021.1927804?casa_token=0GhocVlEnLkAAAAA:DxPkZtOywysKC5n43gXCfrex8jUMag-yXGB7Xr58coj_Ey4dPpcOU4PmqogAyClZJmL_7WMzOrbvPXA (seeking access)
+## Gender stereotypes in Facebook profiles: Are women more female online? (Oberst et al., 2016)
+Results indicate that users present themselves in a less gender stereotypical way online, and that women do so more than males; altered self-presentation on Facebook influenced personal well-being, but to a lesser degree than other factors; finally, high intensity Facebook use showed a negative effect on well-being.
+
 
  Reference:
- Swire-Thompson, B., Lazer, D., Network Science Institute, Northeastern University, Boston, Massachusetts 02115, USA, & Institute for Quantitative Social Science, Harvard University, Cambridge, Massachusetts 02138, USA. (2020). Public health and online misinformation: challenges and recommendations. Annual Review of Public Health, 433–451. https://ssphplus.ch/assets/downloads/210329-public-health-and-online-misinformation.pdf
+
+Swire-Thompson, B., Lazer, D., Network Science Institute, Northeastern University, Boston, Massachusetts 02115, USA, & Institute for Quantitative Social Science, Harvard University, Cambridge, Massachusetts 02138, USA. (2020). Public health and online misinformation: challenges and recommendations. Annual Review of Public Health, 433–451. https://ssphplus.ch/assets/downloads/210329-public-health-and-online-misinformation.pdf
+
+LeBeau, K., Carr, C., & Hart, M. (2019). Examination of gender Stereotypes and Norms in Health-Related Content posted to Snapchat Discover Channels: Qualitative Content Analysis. Journal of Medical Internet Research, 22(3), e15330. https://doi.org/10.2196/15330
+
+Oberst, U., Renau, V., Chamarro, A., & Carbonell, X. (2016). Gender stereotypes in Facebook profiles: Are women more female online? Computers in Human Behavior, 60, 559–564. https://doi.org/10.1016/j.chb.2016.02.085
