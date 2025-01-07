@@ -44,3 +44,52 @@ Swire-Thompson, B., Lazer, D., Network Science Institute, Northeastern Universit
 LeBeau, K., Carr, C., & Hart, M. (2019). Examination of gender Stereotypes and Norms in Health-Related Content posted to Snapchat Discover Channels: Qualitative Content Analysis. Journal of Medical Internet Research, 22(3), e15330. https://doi.org/10.2196/15330
 
 Oberst, U., Renau, V., Chamarro, A., & Carbonell, X. (2016). Gender stereotypes in Facebook profiles: Are women more female online? Computers in Human Behavior, 60, 559–564. https://doi.org/10.1016/j.chb.2016.02.085
+
+
+
+## Human Papillomavirus (HPV) vaccination coverage 2023
+https://immunizationdata.who.int/global/wiise-detail-page/human-papillomavirus-(hpv)-vaccination-coverage?ANTIGEN=&YEAR=&CODE=
+- Geographical disparities
+- Male coverage (voluntary) is lower than female
+- Many missing data (e.g., Asia, Africa, Eastern Europe, the U.S., Australia etc.)
+
+## HPV & the importance of HPV vaccines
+https://www.who.int/news-room/fact-sheets/detail/human-papilloma-virus-and-cancer
+https://www.who.int/activities/immunizing-against-hpv
+- Human papillomavirus (HPV) is a common sexually transmitted infection which is connected to various cancers and genital warts. Among over 200 types of HPV, many of them are harmless and go away on their own, but some high-risk types can cause significant health problems, such as cancers of the cervix, vulva, vagina, penis, anus, head and neck.
+- HPV vaccine can effectively prevent infections from the most harmful types of HPV, particularly types 16 and 18, which account for over 70% of cervical cancer instances. 
+- It is recommended that girls aged 9 to 14 should get the HPV vaccine because it is most impactful when administered before individuals get sexually active.
+- Cervical cancer is the most serious long-term consequence of HPV infection. HPV vaccination is considered a highly cost-effective public health tool to eradicate it globally, especially in less developed areas where the illness is most prevalent while screening and treatment are scarce.​
+
+## Identifying False Human Papillomavirus (HPV) Vaccine Information and Corresponding Risk Perceptions From Twitter: Advanced Predictive Models
+9 Sep 2021
+https://www.jmir.org/2021/9/e30451/
+- Misinformation poses risks that can be exacerbated by social media. People may become victims of the spread of false health information due to a lack of health literacy and the inability to assess reliability. The quality of health news is also inconsistent, regardless of the sources used. To reduce the risks associated with misinformation, it is critical to identify it before it spreads.
+- The study showed that false HPV vaccine information and risk perceptions on Twitter (corpus in English from Dec 2013 to Dec 2017) could be successfully detected by applying machine learning and NLP to create a number of classification models and causality mining techniques. In particular, the convolutional neural network model (CNN) performed the best among all models, with an F score of 91.95. 
+- Overall, people talked about the advantages or low risk of harms in the true HPV vaccination tweets and different negative impacts in the false information tweets. According to research, false information primarily consisted of loss-framed messages about the possible risks of vaccines covering many subjects (e.g., infertility, neurological disorders, child developmental disorders, and death). These tweets typically used a wider range of vocabulary as well. True information, on the other hand, included both gain-framed messages (e.g., preventing cancer linked to HPV infection and denying the risk of increased unprotected sexual behaviour of the vaccinated teenagers) and loss-framed messages that focused on the effectiveness of vaccines covering fewer topics. Besides, those tweets used a relatively limited vocabulary.
+- These findings are consistent with previous related literature. One possible explanation for the disparity is that true information requires evidence-based language, which limits the vocabulary size. In contrast, false tweets are more likely to use narrative language or introduce new subjects to attract attention.
+
+## Exploring content of misinformation about HPV vaccine on twitter
+27 Jul 2022
+https://link.springer.com/article/10.1007/s10865-022-00342-1
+- A study of 3876 distinct English tweets from December 15, 2019, to March 31, 2020, revealed that 24% of them contained dis-/misinformation. 
+- In line with earlier research, audience engagement against vaccines is higher than that in favour of them (measured by the total number of likes, retweets, and replies). Tweets that contain personal narratives, are ambiguous, and are not age or gender specific increase audience engagement.
+- The most common categories of dis-/misinformation were adverse health effects (59%), mandatory vaccination (19%), and inefficacy of the vaccine (14%). Among the adverse health effects Tweets, non-specific harm/injury (51%) and death (23%) were the most frequent. 
+- Types of concern: health, safety, pharma, government, common concerns, mandatory, ineffective, vague, and other.
+
+## Detecting and monitoring concerns against HPV vaccination on social media using large language models
+21 Jun 2024
+https://www.nature.com/articles/s41598-024-64703-3
+- After examining 653k tweets about HPV between Jan 2020 and Jun 2022, the main themes were vaccine mandates, adverse effects, and personal anecdotes. Nearly 50% of the sample expressed concern. 
+- The trend in tweets has shifted from pre-2020 to personal stories of vaccine-related harm, with an increasing demand for parental approval and openness.
+- About 80% of the topic labelling performed by GPT-4 was manually marked as “(somewhat) appropriate”, although it tended to over-generalise.
+
+## Some observations:
+- Most past research studies only English social media posts.
+- Much literature is based on the U.S. data.
+
+## Some possible limitations/considerations:
+- Single platform
+- Representative?
+- Differentiate between misinformation & disinformation
+- The number of followers can also affect audience engagement 
