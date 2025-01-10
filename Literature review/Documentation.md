@@ -93,3 +93,17 @@ https://www.nature.com/articles/s41598-024-64703-3
 - Representative?
 - Differentiate between misinformation & disinformation
 - The number of followers can also affect audience engagement 
+
+## Social and cultural construction processes involved in HPV vaccine hesitancy among Chinese women: a qualitative study
+18 Sep 2019
+https://link.springer.com/article/10.1186/s12939-019-1052-9
+
+Stereotypes:
+- The vaccine is exclusively for women.
+- Confusion/inter-relationship between HPV and HIV.
+- The causation between being promiscuous (having many sexual partners or indulging in frequent sexual activities) & cervical cancer incidence.
+- Inefficacy of the HPV vaccine if there is already sexual experience.
+- Unawareness of the risk of cervical cancer and the necessity of vaccination for the non-vaccinated people with no gynaecological conditions in their family or social network.
+- Suspicion of the commercial intention by doctors (doctors, sickness, treatment > doctors, preventive care).
+- HPV vaccine is likely to encourage immoral, promiscuous, and dangerous sexual behaviour as vaccinated women might not be afraid of cervical cancer anymore. 
+- The vaccine can cause death and paralysis (or some unknown side effects).
