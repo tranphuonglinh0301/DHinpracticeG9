@@ -1,9 +1,9 @@
 # Topic modeling
-During this step of the project, we did the topic modelling separately for tweets by languages using LDA. In LDA, the text is considered a bag of word, and the topics are identified based on the frequency of words. This is also the most common topic modelling method. 
+During this step of the project, we did the topic modelling separately for tweets by languages using LDA. In LDA, the text is considered a bag of words, and the topics are identified based on the frequency of words. This is also the most common topic modelling method.
 
-The content of the tweets are tokenized and then lemmatized. After that, the stopwords were removed to avoid confusion during topic division. Based on the available tokens, the tweets are classified into 10 different topics (each language). When working on the English dataset, we have done some trials to find out the optimal number of topic. 10 is chosen, due to the fact that it is not too many, and at the same time has a higher coherence score within each topics compared to 3 or 5 topics. 
+The content of the tweets are tokenized and then lemmatized. After that, the stopwords were removed to avoid confusion during topic division. Based on the available tokens, the tweets are classified into 10 different topics (each language). When working on the English dataset, we have done some trials to find out the optimal number of topics. 10 is chosen, due to the fact that it is not too many, and at the same time has a higher coherence score within each topic compared to 3 or 5 topics.
 
-The results of the topic modelling is represented as a set of words. Therefore, further analysis and research need to be done to come to a clear conclusion. 
+The results of the topic modelling is represented as a set of words (The results have been updated on Github repository). Therefore, further analysis and research need to be done to come to a clear conclusion. 
 
 ## Results 
 ### English
