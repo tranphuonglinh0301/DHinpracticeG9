@@ -7,3 +7,5 @@ The results of the topic modelling is represented as a set of words, based on th
 
 In the documentation file on Google Docs, some plots regarding number of characters, number of words and common tokens in each language dataset are included. 
 
+# Changes (22.01.2025)
+Using the filtered datasets, we performed the topic modelling (one more time). For this time, after finding out the top most common words in each dataset, the tokens that directly mentioned HPV (“hpv”, “vaccine”, “vaccin”, “gardasil”, “papillomavirus”...) were removed from the bag of words. We remove this in order to see the other less common tokens more clearly, so we will be able to categorize them into meaningful topics. The files contain "_hpv" are the files related to this change. 
