@@ -32,7 +32,7 @@ Magazine Discover channels with male and female target audiences were identified
 => Differences in health content coverage existed between male- and female-focused channels. General health stories from male channels comprised 7.5% (10/134) of total stories compared with 22.8% (62/272) for female channels. Sexual health stories from male channels comprised 3.0% (4/134) of total stories compared with 18.8% (51/272) for female channels. Moreover, female-focused channels’ content was more comprehensive. Female audiences were portrayed as being health information seekers, concerned with sexual health and male satisfaction, primarily responsible for contraception and pregnancy prevention, and less informed about sex. Male audiences were portrayed as being less likely to seek health information, obsessed with and driven by sex, and less concerned with sexual health.
 ### Note
 - In seeking for articles that relate gender stereotypes with health information, majority of research focuses on investigating how gender stereotype affects the intention and behavior of seeking health information in male and female individuals.
-## https://www.tandfonline.com/doi/abs/10.1080/17512786.2021.1927804?casa_token=0GhocVlEnLkAAAAA:DxPkZtOywysKC5n43gXCfrex8jUMag-yXGB7Xr58coj_Ey4dPpcOU4PmqogAyClZJmL_7WMzOrbvPXA (seeking access)
+- 
 ## Gender stereotypes in Facebook profiles: Are women more female online? (Oberst et al., 2016)
 Results indicate that users present themselves in a less gender stereotypical way online, and that women do so more than males; altered self-presentation on Facebook influenced personal well-being, but to a lesser degree than other factors; finally, high intensity Facebook use showed a negative effect on well-being.
 
