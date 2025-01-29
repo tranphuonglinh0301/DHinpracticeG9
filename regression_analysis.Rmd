@@ -1,0 +1,226 @@
+---
+title: "regression_analysis"
+output: html_document
+date: "2025-01-26"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(tidyverse)
+data <- read.csv('hpv_engagement_en&fr.csv')
+```
+
+```{r}
+summary(data)
+```
+```{r}
+summary(data$engagement)
+hist(data$engagement)
+```
+```{r}
+ggplot(data, aes(language, engagement)) +
+  geom_boxplot(colour = c("coral1", "turquoise3")) +
+  scale_x_discrete(labels = c("English", "French")) +
+  labs(x = "Language", y = "Engagement per tweet",
+       title = "The distribution of each tweet’s engagement by language") +
+  theme_minimal() +
+  theme(legend.position = "none", 
+        plot.title = element_text(hjust = 0.5),
+        aspect.ratio = 1/1) +
+  annotate("text", x = 1, y = 38, size = 3.3, label = "Mean = 9.9") +
+  annotate("text", x = 1, y = 229, size = 3.3, label = "Max = 192") +
+  annotate("text", x = 2, y = 45, size = 3.3, label = "Mean = 43") +
+  annotate("text", x = 2, y = 1633, size = 3.3, label = "Max = 1592")
+```
+
+```{r}
+data_plot <- data %>%
+  group_by(language) %>%
+  summarize(engagement_mean = mean(engagement))
+
+ggplot(data_plot, aes(x = language, y = engagement_mean)) + 
+  geom_col(aes(fill = language), width = 0.4) + 
+  geom_text(aes(label = round(engagement_mean, 1)), vjust = -0.5) +
+  labs(x = "Language", y = "Average engagement (count)", 
+       title = "The difference in engagement between English and French") + 
+  theme_minimal() + 
+  theme(legend.position = "none",
+        plot.title = element_text(hjust = 0.5),
+        aspect.ratio = 1/1) +
+  scale_x_discrete(labels = c("English", "French"))
+```
+```{r}
+ggplot(data, aes(x = as.factor(language), y = engagement)) +
+  geom_violin(aes(fill = as.factor(language)), alpha = 0.8) +
+  geom_point(data = data_plot, aes(x = as.factor(language), y = engagement_mean), 
+             color = "black", size = 1.2) +
+  geom_text(data = data_plot, aes(x = as.factor(language), y = engagement_mean, 
+                                   label = round(engagement_mean, 1)), hjust = -0.4, vjust = 0.1, color = "black") +
+  labs(x = "Language", y = "Engagement", title = "Engagement distribution by language") +
+  scale_x_discrete(labels = c("English", "French")) +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+```{r}
+data_en <- subset(data, language == "en")
+```
+
+```{r}
+ggplot(data_en, aes(x = language, y = engagement)) +
+  geom_violin(aes(fill = language), draw_quantiles = 0.5, alpha = 0.8) +
+  labs(x = "English", y = "Engagement") +
+  theme_minimal() +
+  theme(legend.position = "none", aspect.ratio = 3/2) +
+  annotate("text", x = 0.7, y = 10, size = 3.8, label = "Mean = 9.9") +
+  annotate("text", x = 1, y = 198, size = 3.8, label = "Max = 192") +
+  scale_x_discrete(labels = NULL)
+```
+```{r}
+data_fr <- subset(data, language == "fr")
+```
+
+```{r}
+ggplot(data_fr, aes(x = language, y = engagement)) +
+  geom_violin(fill = "turquoise3", draw_quantiles = 0.5, alpha = 0.8) +
+  labs(x = "French", y = "Engagement") +
+  theme_minimal() +
+  theme(legend.position = "none", aspect.ratio = 3/2) +
+  annotate("text", x = 0.7, y = 45, size = 3.8, label = "Mean = 43") +
+  annotate("text", x = 1, y = 1619, size = 3.8, label = "Max = 1592") +
+  scale_x_discrete(labels = NULL)
+```
+
+```{r}
+data$language <- as.factor(data$language)
+model_nb <- glm.nb(engagement ~ language, data)
+summary(model_nb)
+```
+Because of the over-dispersed data with many extreme values, the negative binomial regression is used to regress the natural logarithm of the y-variable (language) on the x-variable (engagement). English is the baseline category here. The intercept indicates that the mean engagement count for tweets in English is about e^2.2908 = 9.88. As the coefficient of languagefr shows, tweets in French have on average approximately e^1.4711 = 4.354 times higher engagement than English, i.e., the mean engagement count for tweets in French is about 43.02. The extremely small p-value indicates that this result is statistically significant.
+
+```{r}
+en <- read.csv("dataset_en_hpv.csv")
+```
+
+```{r}
+vars <- c("X", "full_text", "likes_count", "quotes_count", "replies_count", "retweets_count", "user_is_verified", "engagement")
+new_en <- en[vars]
+```
+
+```{r}
+new_en$user_is_verified <- as.factor(new_en$user_is_verified)
+new_en$verified <- as.numeric(new_en$user_is_verified)
+```
+
+```{r}
+model_lm <- lm(engagement ~ likes_count + quotes_count + replies_count + retweets_count + verified, new_en)
+summary(model_lm)
+```
+
+```{r}
+cor(new_en[, c("likes_count", "quotes_count", "replies_count", "retweets_count", "verified", "engagement")])
+```
+```{r}
+# Engagement components preparation
+en_plot <- new_en %>%
+  pivot_longer(cols = c(likes_count, quotes_count, replies_count, retweets_count),
+               names_to = "variable",
+               values_to = "value")
+```
+
+```{r}
+# Stats preparation
+reg_stats <- en_plot %>%
+  group_by(variable) %>%
+  summarise(model = list(lm(engagement ~ value, data = cur_data())), 
+            # cur_data() ensures that the function inside summarise() operates on only the relevant sub-data 
+            r_squared = summary(model[[1]])$r.squared,
+            # Double [] to extract the actual element from the list (model is a list here)
+            correlation = sqrt(r_squared) * sign(coef(model[[1]])[2]),
+            # sign function shows the correct direction of the relationship, although here are all positive
+            p_value = summary(model[[1]])$coefficients[2, 4])
+            # Values below 0.001 will be shown as "<0.001"
+
+# Labels preparations
+reg_stats <- reg_stats %>%
+  mutate(label = paste0("r = ", round(correlation, 2), "\n",
+                        "R² = ", round(r_squared, 2), "\n",
+                        "p ", format.pval(p_value, digits = 2, eps = 0.001)))
+```
+
+```{r}
+ggplot(en_plot, aes(value, engagement)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", colour = "firebrick3", se = TRUE) +
+  geom_text(data = reg_stats, aes(x = Inf, y = Inf, label = label), inherit.aes = FALSE,
+            hjust = 1, vjust = 4, size = 2.5, colour = "black") +
+  facet_wrap(~ variable, scales = "free_x", axes = "all_y") +
+  labs(x = "Engagement component", y = "Engagement (count)", 
+       title = "Regression of engagement on components for tweets in English") +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+```{r}
+fr <- read.csv("dataset_fr_hpv.csv")
+```
+
+```{r}
+new_fr <- fr[vars]
+
+new_fr$user_is_verified <- as.factor(new_fr$user_is_verified)
+new_fr$verified <- as.numeric(new_fr$user_is_verified)
+```
+
+```{r}
+model_lm_fr <- lm(engagement ~ likes_count + quotes_count + replies_count + retweets_count + verified, new_fr)
+summary(model_lm_fr)
+```
+```{r}
+cor(new_fr[, c("likes_count", "quotes_count", "replies_count", "retweets_count", "verified", "engagement")])
+```
+
+```{r}
+# Engagement components preparation
+fr_plot <- new_fr %>%
+  pivot_longer(cols = c(likes_count, quotes_count, replies_count, retweets_count),
+               names_to = "variable",
+               values_to = "value")
+```
+
+```{r}
+# Stats preparation
+reg_stats_fr <- fr_plot %>%
+  group_by(variable) %>%
+  summarise(model = list(lm(engagement ~ value, data = cur_data())), 
+            # cur_data() ensures that the function inside summarise() operates on only the relevant sub-data 
+            r_squared = summary(model[[1]])$r.squared,
+            # Double [] to extract the actual element from the list (model is a list here)
+            correlation = sqrt(r_squared) * sign(coef(model[[1]])[2]),
+            # sign function shows the correct direction of the relationship, although here are all positive
+            p_value = summary(model[[1]])$coefficients[2, 4])
+            # Values below 0.001 will be shown as "<0.001"
+
+# Labels preparations
+reg_stats_fr <- reg_stats_fr %>%
+  mutate(label = paste0("r = ", round(correlation, 2), "\n",
+                        "R² = ", round(r_squared, 2), "\n",
+                        "p ", format.pval(p_value, digits = 2, eps = 0.001)))
+```
+
+```{r}
+ggplot(fr_plot, aes(value, engagement)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", colour = "royalblue", se = TRUE) +
+  geom_text(data = reg_stats_fr, aes(x = Inf, y = Inf, label = label), inherit.aes = FALSE,
+            hjust = 1, vjust = 4, size = 2.5, colour = "black") +
+  facet_wrap(~ variable, scales = "free_x", axes = "all_y") +
+  labs(x = "Engagement component", y = "Engagement (count)", 
+       title = "Regression of engagement on components for tweets in French") +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
