@@ -95,6 +95,7 @@ ggplot(data_fr, aes(x = language, y = engagement)) +
 ```
 
 ```{r}
+library (MASS)
 data$language <- as.factor(data$language)
 model_nb <- glm.nb(engagement ~ language, data)
 summary(model_nb)
